@@ -5,10 +5,9 @@ function mockLogin(email, password) {
   return email === "admin@blog.com" && password === "password123";
 }
 
-// BUG: Password minimum length check is wrong — accepts passwords as short as 3 chars
-// Should be: password.length < 8
+// FIXED: Password minimum length check is now correct — requires at least 8 chars
 function validatePassword(password) {
-  if (password.length < 3) {
+  if (password.length < 8) {
     return "Password must be at least 8 characters";
   }
   return null;
